@@ -16,10 +16,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static utils.PropertyReader.propertyReader;
+
 
 public class PUT_EditBook extends BaseTest {
 
-    static String getId = "100";
+    static String getId = propertyReader("resources/TestData/books/uat_testData.properties","bookId");
 
     public static Response getBookList() {
         Map<String, Object> book = new HashMap<>();

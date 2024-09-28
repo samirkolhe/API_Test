@@ -14,10 +14,12 @@ import utils.PropertyReader;
 
 import java.io.IOException;
 
+import static utils.PropertyReader.propertyReader;
+
 
 public class GET_AuthorList_ById extends BaseTest {
 
-    static String getId = "100";
+    static String getId = propertyReader("resources/TestData/authors/uat_testData.properties","authorID");
 
     public static Response getAuthorListById() {
         return HTTPMethods.getRequest("/api/v1/Authors/" + getId, header(), StatusCodes.SUCCESS);

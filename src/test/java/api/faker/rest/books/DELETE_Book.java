@@ -13,10 +13,12 @@ import utils.PropertyReader;
 
 import java.io.IOException;
 
+import static utils.PropertyReader.propertyReader;
+
 
 public class DELETE_Book extends BaseTest {
 
-    static String getId = "100";
+    static String getId = propertyReader("resources/TestData/books/uat_testData.properties","bookId");
 
     public static Response getBookList() {
         return HTTPMethods.deleteRequest("/api/v1/Books/" + getId, header(), StatusCodes.SUCCESS);
@@ -24,7 +26,7 @@ public class DELETE_Book extends BaseTest {
 
     @BeforeClass(alwaysRun = true)
     public void setup() {
-        HTTPMethods.setBaseURI(PropertyReader.propertyReader("config/setup_" + setEnv + ".properties", "baseURI"));
+        HTTPMethods.setBaseURI(propertyReader("config/setup_" + setEnv + ".properties", "baseURI"));
     }
 
     @Test(description = "Validate the GET request is displaying the exchange rate of given currency")

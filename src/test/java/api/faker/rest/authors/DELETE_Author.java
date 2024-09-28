@@ -13,10 +13,12 @@ import utils.PropertyReader;
 
 import java.io.IOException;
 
+import static utils.PropertyReader.propertyReader;
+
 
 public class DELETE_Author extends BaseTest {
 
-    static String getId = "200";
+    static String getId = propertyReader("resources/TestData/authors/uat_testData.properties","authorID");
 
     public static Response deleteAuthorById() {
         return HTTPMethods.deleteRequest("/api/v1/Authors/" + getId, header(), StatusCodes.SUCCESS);
