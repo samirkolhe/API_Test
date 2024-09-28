@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Neom API HEALTH CHECK Automation Suite">
+    <test name="Neom API Automation Test Cases">
+        <classes>
+            <class name="api.faker.rest.books.GET_BooksList"/>
+            <class name="api.faker.rest.books.GET_BooksList_ById"/>
+            <class name="api.faker.rest.books.POST_AddBook"/>
+            <class name="api.faker.rest.books.PUT_EditBook"/>
+            <class name="api.faker.rest.books.DELETE_Book">
+            </class>
+        </classes>
+    </test>
+</suite>

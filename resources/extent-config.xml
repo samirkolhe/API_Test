@@ -1,0 +1,48 @@
+<configuration>
+    <encoding>UTF-8</encoding>
+    <theme>standard</theme>
+    <protocol>https</protocol>
+    <timelineEnabled>true</timelineEnabled>
+    <offlineMode>true</offlineMode>
+
+    <!-- Inject CSS and JS for collapsible steps -->
+    <html>
+        <![CDATA[
+        <style>
+            /* Styling for step summary */
+            .step-summary {
+                cursor: pointer;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%; /* Adjust based on your container size */
+                color: blue;
+                display: inline-block;
+            }
+
+            /* Initially hide step details */
+            .step-details {
+                display: none;
+                padding-left: 20px;
+                margin-top: 5px;
+                color: grey;
+            }
+        </style>
+        <script>
+            /* Function to toggle between showing and hiding step details */
+            function toggleStep(element) {
+                var details = element.nextElementSibling;
+                if (details.style.display === "none" || details.style.display === "") {
+                    details.style.display = "block";
+                } else {
+                    details.style.display = "none";
+                }
+            }
+        </script>
+        ]]>
+    </html>
+
+    <reportName>Automation Test Report</reportName>
+    <documentTitle>Test Results</documentTitle>
+    <enableTimeline>true</enableTimeline>
+</configuration>
